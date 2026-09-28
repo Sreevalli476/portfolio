@@ -1,0 +1,51 @@
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.cert-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cert-card:hover {
+  border-color: var(--green);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.cert-card h3 {
+  font-size: 1.05rem;
+  color: var(--green);
+}
+
+.cert-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.cert-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.cert-links a {
+  color: var(--green);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.cert-links a:hover {
+  text-decoration: underline;
+}
+
+.hidden-cert {
+  display: none;
+}

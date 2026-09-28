@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f5f7f6;
+  --white: #ffffff;
+  --text: #222222;
+  --muted: #555555;
+  --green: #1f7a52;
+  --light-green: #e6f2ec;
+  --border: #e0e0e0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 18px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(160deg, #f7faf8 0%, #e9f4ee 100%);
+  background-attachment: fixed;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+::selection {
+  background: var(--green);
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 24px;
+  scroll-margin-top: 70px;
+}
+
+.section-tag {
+  color: var(--green);
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  margin-bottom: 35px;
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--green);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 13px 28px;
+  background: var(--green);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(31, 122, 82, 0.35);
+}
+
+/* Cards and boxes: smooth hover lift */
+.skill-card,
+.project-card,
+.cert-card,
+.stat {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.skill-card:hover,
+.project-card:hover,
+.cert-card:hover,
+.stat:hover {
+  transform: translateY(-8px);
+}
+
+/* Small tags: turn green on hover */
+.skill-tags span,
+.project-tags span {
+  transition: all 0.25s ease;
+}
+
+.skill-tags span:hover,
+.project-tags span:hover {
+  background: var(--green);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Form fields: glow when selected */
+.contact-form input,
+.contact-form textarea {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 0 4px rgba(31, 122, 82, 0.15);
+}
+
+/* Extra cards shown by the View All buttons */
+.hidden-skill.revealed {
+  display: block;
+  animation: popIn 0.5s ease backwards;
+}
+
+.hidden-project.revealed,
+.hidden-cert.revealed {
+  display: flex;
+  animation: popIn 0.5s ease backwards;
+}
+
+/* Scroll reveal (added by script.js) */
+.reveal {
+  opacity: 0;
+}
+
+.reveal.in-view {
+  animation: fadeUp 0.8s ease both;
+}
+
+/* Top progress bar */
+#progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0;
+  background: linear-gradient(90deg, var(--green), #3fae7d);
+  z-index: 200;
+}
+
+/* Scroll to top button */
+#scrollTopBtn {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 150;
+}
+
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#scrollTopBtn:hover {
+  transform: translateY(-5px);
+  background: #166040;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: var(--muted);
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,30 @@
+.about-text {
+  color: var(--muted);
+  max-width: 750px;
+  margin-bottom: 30px;
+}
+
+.about-stats {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 30px;
+  text-align: center;
+  min-width: 160px;
+}
+
+.stat h3 {
+  color: var(--green);
+  font-size: 1.6rem;
+}
+
+.stat p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
