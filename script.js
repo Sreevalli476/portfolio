@@ -1,4 +1,26 @@
-// ---------- 1. Load each section file into index.html ----------
+document.addEventListener("DOMContentLoaded", function () {
+
+    const welcomeScreen = document.getElementById("welcomeScreen");
+    const enterButton = document.getElementById("enterPortfolio");
+
+    if (enterButton && welcomeScreen) {
+        enterButton.onclick = function () {
+            welcomeScreen.classList.add("hide");
+
+            setTimeout(function () {
+                welcomeScreen.style.display = "none";
+            }, 800);
+        };
+    }
+
+    initLoader();
+    initTypingEffect();
+    initReveal();
+    initViewAllProjects();
+    initViewAllCertifications();
+    initContactForm();
+
+});
 var sections = ["home", "about", "skills", "projects", "certifications", "contact"];
 
 var loaded = sections.map(function (name) {
